@@ -18,6 +18,8 @@ syntax = "proto3";
 
 package grpc.reflection.v1alpha;
 
+import "google/protobuf/empty.proto";
+
 service ServerReflection {
   // The reflection service is structured as a bidirectional stream, ensuring
   // all related requests go to a single server.
@@ -56,7 +58,7 @@ message ServerReflectionRequest {
 
     // List the full names of registered services. The content will not be
     // checked.
-    string list_services = 7;
+    google.protobuf.Empty list_services = 7;
   }
 }
 
